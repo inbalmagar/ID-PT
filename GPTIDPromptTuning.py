@@ -41,6 +41,8 @@ class GPTIDPromptTuning:
                                                                   initialize_from_vocab=initialize_from_vocab,
                                                                   random_range=random_range)
         tokenizer = GPT2Tokenizer.from_pretrained("gpt2", pad_token='<|pad|>')
+        # tokenizer = GPT2Tokenizer.from_pretrained("gpt2", pad_token='<|endoftext|>')
+
         self.prompt_model.resize_token_embeddings(len(tokenizer))
         self.prompt_model.config.pad_token_id = tokenizer.pad_token_id
 
