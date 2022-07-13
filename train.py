@@ -26,10 +26,6 @@ def load_imdb(tokenizer, batch_size=8, max_length=512, n_prompt_tokens=20, n_sam
     max_length = max_length
     n_prompt_tokens = n_prompt_tokens
 
-    # tokenizer = GPT2Tokenizer.from_pretrained("gpt2", pad_token='<|pad|>')
-    # tokenizer.pad_token = ?
-    # tokenizer = GPT2Tokenizer.from_pretrained("gpt2", pad_token='<|endoftext|>')
-
     train_df = pd.DataFrame({'text': dataset['train']['text'],
                              'label': dataset['train']['label']})
     train_df = train_df.sample(min(len(train_df), n_samples))
